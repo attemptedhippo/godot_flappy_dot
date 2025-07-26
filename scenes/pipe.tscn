@@ -4,15 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://qg36ri6r478j" path="res://assets/pipe_body.png" id="2_78010"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78010"]
-size = Vector2(18, 16)
+size = Vector2(24, 13)
 
 [node name="Pipe" type="Node2D"]
 
 [node name="Top" type="RigidBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
-position = Vector2(0, 1)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_78010")
 
 [node name="Sprite2D" type="Sprite2D" parent="Top"]
@@ -20,6 +19,7 @@ texture_filter = 1
 texture = ExtResource("1_bepn3")
 
 [node name="Body" type="RigidBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource("RectangleShape2D_78010")
