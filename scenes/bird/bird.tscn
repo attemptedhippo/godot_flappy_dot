@@ -17,7 +17,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_1m27c")
 }],
-"loop": true,
+"loop": false,
 "name": &"flying",
 "speed": 5.0
 }]
@@ -33,7 +33,7 @@ script = ExtResource("1_4fdg0")
 sprite_frames = SubResource("SpriteFrames_4juht")
 animation = &"flying"
 frame = 2
-frame_progress = 1.0
+frame_progress = 0.142783
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -1)

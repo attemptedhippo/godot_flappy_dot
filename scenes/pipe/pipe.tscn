@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dqpierdtueny0"]
+
+[node name="pipe" type="Area2D"]
+
+[node name="upper" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+
+[node name="lower" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
