@@ -10,8 +10,10 @@ var ground_height : int
 var pipes : Array
 const PIPE_DELAY : int = 100
 const PIPE_RANGE : int = 200
-var debounce_max : float = 3
+var debounce_max : float = 1
 var debounce : float = 0
+var game_over_restart_text_faded : Color = Color(0.2, 0.2, 0.2)
+var game_over_restart_text_solid : Color = Color(1, 1, 1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -51,13 +53,16 @@ func bird_crash():
 	game_over = true
 	game_running = false
 	debounce = debounce_max
-
+	$game_over/ColorRect/MarginContainer/VBoxContainer/restart_text.add_theme_color_override("font_color", Color(0.2, 0.2, 0.2))
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if game_over:
 		$game_over.visible = true
 		if debounce > 0:
 			debounce -= delta
+			$game_over/ColorRect/MarginContainer/VBoxContainer/game_over_debounce_bar.value = (debounce / debounce_max) * 100
+		else:
+			$game_over/ColorRect/MarginContainer/VBoxContainer/restart_text.add_theme_color_override("font_color", Color(1, 1, 1))
 		return
 		
 	if game_running:
